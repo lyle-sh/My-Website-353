@@ -1,0 +1,105 @@
+/* ============================================================
+   gallery.css  |  Gallery page styles
+   ============================================================ */
+
+/* ---- PAGE HEADER ---- */
+.gallery-header {
+  padding: 80px 0 40px;
+  background: var(--black);
+  margin-top: 65px;
+}
+
+/* ---- STICKY YEAR NAV ---- */
+.gallery-nav {
+  position: sticky;
+  top: 65px;
+  z-index: 100;
+  background: rgba(10,10,10,.95);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--bdr);
+}
+
+.gallery-nav .w {
+  display: flex;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.gnav-btn {
+  font-family: var(--fh);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--grey);
+  padding: 18px 28px;
+  border-bottom: 2px solid transparent;
+  transition: all .2s;
+  cursor: pointer;
+}
+.gnav-btn:hover  { color: #fff; }
+.gnav-btn.active { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* ---- SEASON SECTION ---- */
+.gallery-season { padding: 80px 0; }
+
+.season-header {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--bdr);
+  padding-bottom: 32px;
+}
+
+.season-yr {
+  font-family: var(--fh);
+  font-size: 96px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--orange);
+  letter-spacing: -4px;
+}
+
+.season-tag {
+  font-family: var(--fh);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+/* ---- PHOTO GRID ---- */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.photo-item {
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--surf2);
+}
+.photo-item.wide { grid-column: span 2; }
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+  display: block;
+}
+.photo-item:hover img { transform: scale(1.04); }
+
+/* ---- SCROLL REVEAL ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
