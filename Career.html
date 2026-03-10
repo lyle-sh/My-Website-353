@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career | Lyle Schofield Racing Driver</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="main.css"/>
+  <style>
+
+    /* ---- TIMELINE ---- */
+    .timeline { display: flex; flex-direction: column; }
+
+    .season-row {
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
+      align-items: start;
+      gap: 48px;
+      padding: 52px 0;
+      border-bottom: 1px solid var(--bdr);
+    }
+    .season-row:last-child { border-bottom: none; }
+
+    .season-year {
+      font-family: var(--fh);
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--bdr);
+      letter-spacing: -2px;
+    }
+    .season-year.cur { color: var(--orange); }
+
+    .season-series {
+      font-family: var(--fh);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+
+    .season-name {
+      font-family: var(--fh);
+      font-size: clamp(22px, 2.8vw, 34px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+
+    .season-car {
+      font-size: 13px;
+      color: var(--grey);
+      margin-bottom: 28px;
+    }
+
+    .sub-results {
+      display: flex;
+      gap: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--bdr);
+    }
+
+    .sub-col > label {
+      display: block;
+      font-family: var(--fh);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 14px;
+    }
+
+    .mini-stats { display: flex; gap: 28px; }
+
+    .ms-num {
+      font-family: var(--fh);
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--blue);
+      line-height: 1;
+    }
+    .ms-lbl {
+      font-family: var(--fh);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-top: 3px;
+    }
+
+    /* ---- BADGES ---- */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--fh);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border: 1px solid;
+      white-space: nowrap;
+      align-self: flex-start;
+      margin-top: 6px;
+    }
+    .b-gold   { color: var(--orange); border-color: var(--orange); background: rgba(255,94,0,.08); }
+    .b-silver { color: #aaa;          border-color: #555;          background: rgba(255,255,255,.04); }
+    .b-green  { color: var(--green);  border-color: var(--green);  background: rgba(22,155,98,.08); }
+
+    /* ---- MANUFACTURER CARDS ---- */
+    .mfr-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .mfr-card {
+      background: var(--surf);
+      border: 1px solid var(--bdr);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .3s;
+    }
+    .mfr-card:hover { border-color: var(--blue); }
+    .mfr-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0; width: 3px;
+      background: var(--blue);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform .4s ease;
+    }
+    .mfr-card:hover::before { transform: scaleY(1); }
+
+    .mfr-tag {
+      font-family: var(--fh);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .mfr-name {
+      font-family: var(--fh);
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    .mfr-desc {
+      color: var(--grey);
+      font-size: 13px;
+      line-height: 1.75;
+      margin-top: 14px;
+    }
+
+    /* ---- DRIVER PROFILE GRID ---- */
+    .attr-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--bdr);
+      border: 1px solid var(--bdr);
+      margin-top: 48px;
+    }
+
+    .attr-item {
+      background: var(--surf);
+      padding: 36px 28px;
+      transition: background .3s;
+    }
+    .attr-item:hover { background: var(--surf2); }
+
+    .attr-label {
+      font-family: var(--fh);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 10px;
+    }
+
+    .attr-val {
+      font-family: var(--fh);
+      font-size: 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="HomePage.html" class="nav-logo">
+      <img src="Assets/logo/353-sans-fond.png" alt="353" class="logo-default">
+      <img src="Assets/logo/353-simple-sans-fond.png" alt="353" class="logo-hover">
+    </a>
+    <ul class="nav-links">
+      <li><a href="HomePage.html#about">About</a></li>
+      <li><a href="Career.html">Career</a></li>
+      <li><a href="HomePage.html#gallery">Gallery</a></li>
+      <li><a href="Partners.html">Partners</a></li>
+    </ul>
+    <div class="nav-r">
+      <div class="soc">
+        <a href="https://www.instagram.com/lyle.schofield/" target="_blank">IG</a>
+        <a href="https://www.youtube.com/channel/UCOOhixOmg9xK0StpdplDpQQ" target="_blank">YT</a>
+        <a href="https://www.tiktok.com/@lyle.schofield" target="_blank">TT</a>
+        <a href="https://www.facebook.com/lyle.schofield.racing" target="_blank">FB</a>
+      </div>
+      <a href="shop.html" class="btn bo" style="padding:9px 20px;font-size:11px;margin-left:10px">Shop</a>
+    </div>
+  </nav>
+
+  <!-- Stats Bar -->
+  <section class="stats" style="margin-top: 65px;">
+    <div class="si">
+      <div class="st"><span class="sn">40</span><div class="sl">GT Race Starts</div></div>
+      <div class="st"><span class="sn">26</span><div class="sl">Race Wins</div></div>
+      <div class="st"><span class="sn">39</span><div class="sl">Podiums</div></div>
+      <div class="st"><span class="sn">26</span><div class="sl">Pole Positions</div></div>
+    </div>
+  </section>
+
+  <!-- Page Header -->
+  <section class="sec" style="background: var(--black); padding-bottom: 40px;">
+    <div class="w">
+      <div class="ey">Racing Record</div>
+      <h2>FROM KARTING TO<br><span class="or">CHAMPION</span></h2>
+      <div class="rule" style="background: var(--orange);"></div>
+      <p style="color: var(--grey); font-size: 15px; line-height: 1.8; max-width: 640px;">
+        GT driver and 2025 Ultimate Cup Overall Champion. Experienced in Ferrari 488 &amp; 296 Challenge machinery, with Ferrari 488 GT3 and Maserati MC20 GT2 manufacturer testing. Proven consistency across sprint and endurance formats.
+      </p>
+    </div>
+  </section>
+
+  <!-- Season Timeline -->
+  <section class="sec" style="background: var(--surf); padding-top: 20px;">
+    <div class="w">
+      <div class="ey">Season by Season</div>
+      <h2>RACE <span class="bl">HISTORY</span></h2>
+      <div class="rule"></div>
+
+      <div class="timeline" style="margin-top: 48px;">
+
+        <!-- 2025 Ultimate Cup - OVERALL CHAMPION -->
+        <div class="season-row">
+          <div class="season-year cur">25</div>
+          <div class="season-body">
+            <div class="season-series">Ultimate Cup European Series</div>
+            <div class="season-name">GT Sprint</div>
+            <div class="season-car">Ferrari 488 Challenge Evo &bull; Team SR&amp;R</div>
+            <div class="sub-results">
+              <div class="sub-col">
+                <label>Overall</label>
+                <div class="mini-stats">
+                  <div class="ms-item"><div class="ms-num">5</div><div class="ms-lbl">Wins</div></div>
+                  <div class="ms-item"><div class="ms-num">7</div><div class="ms-lbl">Podiums</div></div>
+                  <div class="ms-item"><div class="ms-num">6</div><div class="ms-lbl">Poles</div></div>
+                </div>
+              </div>
+              <div class="sub-col">
+                <label>Class</label>
+                <div class="mini-stats">
+                  <div class="ms-item"><div class="ms-num">9</div><div class="ms-lbl">Wins</div></div>
+                  <div class="ms-item"><div class="ms-num">9</div><div class="ms-lbl">Podiums</div></div>
+                  <div class="ms-item"><div class="ms-num">9</div><div class="ms-lbl">Poles</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="badge b-gold">&#9733; Overall Champion</div>
+        </div>
+
+        <!-- 2025 Italian GT Cup Sprint -->
+        <div class="season-row">
+          <div class="season-year cur">25</div>
+          <div class="season-body">
+            <div class="season-series">Italian GT Cup</div>
+            <div class="season-name">GT Sprint</div>
+            <div class="season-car">Ferrari 488 Challenge Evo &bull; Team SR&amp;R</div>
+            <div class="mini-stats" style="margin-top: 24px;">
+              <div class="ms-item"><div class="ms-num">2</div><div class="ms-lbl">Wins</div></div>
+              <div class="ms-item"><div class="ms-num">4</div><div class="ms-lbl">Podiums</div></div>
+              <div class="ms-item"><div class="ms-num">1</div><div class="ms-lbl">Poles</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025 National GT Light - CHAMPION -->
+        <div class="season-row">
+          <div class="season-year cur">25</div>
+          <div class="season-body">
+            <div class="season-series">National Championship</div>
+            <div class="season-name">GT Light</div>
+            <div class="season-car">Ferrari 488 Challenge Evo</div>
+            <div class="mini-stats" style="margin-top: 24px;">
+              <div class="ms-item"><div class="ms-num">3</div><div class="ms-lbl">Wins</div></div>
+              <div class="ms-item"><div class="ms-num">4</div><div class="ms-lbl">Podiums</div></div>
+              <div class="ms-item"><div class="ms-num">4</div><div class="ms-lbl">Poles</div></div>
+            </div>
+          </div>
+          <div class="badge b-green">&#9733; Champion</div>
+        </div>
+
+        <!-- 2024 Ultimate Cup - VICE CHAMPION -->
+        <div class="season-row">
+          <div class="season-year">24</div>
+          <div class="season-body">
+            <div class="season-series">Ultimate Cup Series</div>
+            <div class="season-name">GT Sprint</div>
+            <div class="season-car">Ferrari 488 Challenge Evo &bull; Team SR&amp;R</div>
+            <div class="sub-results">
+              <div class="sub-col">
+                <label>Overall</label>
+                <div class="mini-stats">
+                  <div class="ms-item"><div class="ms-num">1</div><div class="ms-lbl">Wins</div></div>
+                  <div class="ms-item"><div class="ms-num">4</div><div class="ms-lbl">Podiums</div></div>
+                  <div class="ms-item"><div class="ms-num">0</div><div class="ms-lbl">Poles</div></div>
+                </div>
+              </div>
+              <div class="sub-col">
+                <label>Class</label>
+                <div class="mini-stats">
+                  <div class="ms-item"><div class="ms-num">6</div><div class="ms-lbl">Wins</div></div>
+                  <div class="ms-item"><div class="ms-num">8</div><div class="ms-lbl">Podiums</div></div>
+                  <div class="ms-item"><div class="ms-num">6</div><div class="ms-lbl">Poles</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="badge b-silver">&#9651; Vice Champion</div>
+        </div>
+
+        <!-- 2024 Italian GT Cup Endurance -->
+        <div class="season-row">
+          <div class="season-year">24</div>
+          <div class="season-body">
+            <div class="season-series">Italian GT Cup</div>
+            <div class="season-name">GT Endurance</div>
+            <div class="season-car">Ferrari 488 Challenge Evo &bull; Team SR&amp;R</div>
+            <div class="mini-stats" style="margin-top: 24px;">
+              <div class="ms-item"><div class="ms-num">0</div><div class="ms-lbl">Wins</div></div>
+              <div class="ms-item"><div class="ms-num">3</div><div class="ms-lbl">Podiums</div></div>
+              <div class="ms-item"><div class="ms-num">0</div><div class="ms-lbl">Poles</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formula 4 -->
+        <div class="season-row">
+          <div class="season-year" style="font-size:36px; padding-top: 8px;">F4</div>
+          <div class="season-body">
+            <div class="season-series">Single Seater</div>
+            <div class="season-name">Formula 4</div>
+            <div class="season-car">Open-wheel experience prior to GT programme</div>
+            <div class="mini-stats" style="margin-top: 24px;">
+              <div class="ms-item"><div class="ms-num">1</div><div class="ms-lbl">Wins</div></div>
+              <div class="ms-item"><div class="ms-num">6</div><div class="ms-lbl">Podiums</div></div>
+              <div class="ms-item"><div class="ms-num">3</div><div class="ms-lbl">Poles</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Karting -->
+        <div class="season-row">
+          <div class="season-year" style="font-size:36px; padding-top: 8px;">KRT</div>
+          <div class="season-body">
+            <div class="season-series">Early Career</div>
+            <div class="season-name">Karting</div>
+            <div class="season-car">Where it all started - age 9</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Manufacturer Experience -->
+  <section class="sec" style="background: var(--black);">
+    <div class="w">
+      <div class="ey">Factory Testing</div>
+      <h2>MANUFACTURER <span class="bl">EXPERIENCE</span></h2>
+      <div class="rule"></div>
+      <div class="mfr-grid">
+        <div class="mfr-card">
+          <div class="mfr-tag">Ferrari</div>
+          <div class="mfr-name">488 GT3<br>Track Experience</div>
+          <p class="mfr-desc">GT3-spec factory machinery, bridging the gap from Challenge to full GT3 competition level.</p>
+        </div>
+        <div class="mfr-card">
+          <div class="mfr-tag">Maserati</div>
+          <div class="mfr-name">MC20 GT2<br>Manufacturer Testing</div>
+          <p class="mfr-desc">Factory-level GT2 manufacturer testing with the MC20, demonstrating adaptability across different machinery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Driver Profile -->
+  <section class="sec" style="background: var(--surf);">
+    <div class="w">
+      <div class="ey">Behind the Helmet</div>
+      <h2>DRIVER <span class="or">PROFILE</span></h2>
+      <div class="rule" style="background: var(--orange);"></div>
+      <div class="attr-grid">
+        <div class="attr-item">
+          <div class="attr-label">FIA License</div>
+          <div class="attr-val">International B</div>
+        </div>
+        <div class="attr-item">
+          <div class="attr-label">Nationality</div>
+          <div class="attr-val">Irish</div>
+        </div>
+        <div class="attr-item">
+          <div class="attr-label">Languages</div>
+          <div class="attr-val">EN &amp; FR</div>
+        </div>
+        <div class="attr-item">
+          <div class="attr-label">Longest Stint</div>
+          <div class="attr-val">1 Hour</div>
+        </div>
+        <div class="attr-item">
+          <div class="attr-label">Conditions</div>
+          <div class="attr-val">Wet &amp; Mixed</div>
+        </div>
+        <div class="attr-item">
+          <div class="attr-label">Race Formats</div>
+          <div class="attr-val">Multi-Class</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: var(--surf); border-top: 1px solid var(--bdr); padding: 40px; text-align: center; color: var(--grey);">
+    <p>&copy; 2026 Lyle Schofield. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
