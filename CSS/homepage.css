@@ -47,6 +47,9 @@
   object-fit: contain;
 }
 
+/* ---- HERO SHAMROCK ---- */
+.hero-sham { width: 300px; height: 300px; fill: var(--green); }
+
 /* ---- HERO PHOTO ---- */
 .hero-photo {
   position: absolute;
@@ -264,4 +267,53 @@
   width: auto;
   object-fit: cover;
   aspect-ratio: 3 / 4;
+}
+
+
+/* ============================================================
+   RESPONSIVE  —  768px breakpoint
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Hero: undo hard-coded offsets */
+  .hero-cnt {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 24px 80px;
+    justify-content: flex-end;
+  }
+  .hero-cnt h1 {
+    font-size: clamp(52px, 14vw, 80px);
+    margin-left: 0;
+    line-height: 0.95;
+  }
+  .hero-eye {
+    margin-left: 0;
+    font-size: 24px;
+  }
+
+  /* Hide decorative overlays that break on small screens */
+  .hero-photo { display: none; }
+  .s1, .s2   { display: none; }
+  .g353      { font-size: 30vw; right: -5%; }
+
+  /* Slideshow */
+  .slide { height: 260px; }
+
+  /* About: stack vertically */
+  .about-content {
+    flex-direction: column;
+  }
+  .about-image-wrapper {
+    transform: none;
+    margin-top: 40px;
+    margin-left: 0;
+    width: 100%;
+  }
+  .about-image-wrapper img {
+    height: auto;
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+  }
 }

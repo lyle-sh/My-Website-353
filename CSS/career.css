@@ -3,7 +3,7 @@
    ============================================================ */
 
 /* ---- TIMELINE ---- */
-.timeline { display: flex; flex-direction: column; }
+.timeline { display: flex; flex-direction: column; margin-top: 48px; }
 
 .season-row {
   display: grid;
@@ -162,6 +162,20 @@
   margin-top: 14px;
 }
 
+/* ---- CAREER INTRO TEXT ---- */
+.career-intro {
+  color: var(--grey);
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 640px;
+}
+
+/* ---- NON-STANDARD SEASON YEAR LABELS (F4, KRT) ---- */
+.season-year-sm { font-size: 36px; padding-top: 8px; }
+
+/* ---- MINI-STATS WITH TOP MARGIN ---- */
+.mini-stats-mt { margin-top: 24px; }
+
 /* ---- DRIVER PROFILE GRID ---- */
 .attr-grid {
   display: grid;
@@ -195,4 +209,39 @@
   font-weight: 900;
   text-transform: uppercase;
   color: #fff;
+}
+
+
+/* ============================================================
+   RESPONSIVE  —  768px breakpoint
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Timeline: drop the badge column, keep year + body */
+  .season-row {
+    grid-template-columns: 60px 1fr;
+    gap: 16px;
+    padding: 32px 0;
+  }
+  .badge { grid-column: 2; margin-top: 4px; }
+
+  .season-year { font-size: 40px; letter-spacing: -1px; }
+
+  /* Sub-results: stack Overall / Class vertically */
+  .sub-results { flex-direction: column; gap: 20px; }
+
+  /* Mini-stats: tighten gaps */
+  .mini-stats { gap: 16px; }
+
+  /* Manufacturer cards: single column */
+  .mfr-grid { grid-template-columns: 1fr; }
+
+  /* Driver profile: 2 columns */
+  .attr-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .attr-grid { grid-template-columns: 1fr; }
+  .mini-stats { gap: 12px; }
+  .ms-num { font-size: 24px; }
 }

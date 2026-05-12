@@ -24,29 +24,7 @@
 </svg>
 
     <!-- Navigation -->
-<nav>
-  <a href="HomePage.html" class="nav-logo">
-  <img src="../Assets/logo/353-sans-fond.png" alt="353" class="logo-default">
-  <img src="../Assets/logo/353-simple-sans-fond.png" alt="353" class="logo-hover">
-</a>
-
-  <ul class="nav-links">
-    <li><a href="HomePage.html#about">About</a></li>
-    <li><a href="Career.html">Career</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="Partners.html">Partners</a></li>
-  </ul>
-
-    <div class="nav-r">
-    <div class="soc">
-      <a href="https://www.instagram.com/lyle.schofield/" target="_blank">IG</a>
-      <a href="https://www.youtube.com/channel/UCOOhixOmg9xK0StpdplDpQQ" target="_blank">YT</a>
-      <a href="https://www.tiktok.com/@lyle.schofield" target="_blank">TT</a>
-      <a href="https://www.facebook.com/lyle.schofield.racing" target="_blank">FB</a>
-    </div>
-    <a href="shop.html" class="btn bo" style="padding:9px 20px;font-size:11px;margin-left:10px">Shop</a>
-  </div>
-</nav>
+<nav id="site-nav"></nav>
 
 
 <!-- ====== HERO ====== -->
@@ -70,18 +48,18 @@
   <div class="g353">353</div>
 
   <!-- Shamrock watermark -->
-  <svg class="hero-sham" style="width:300px;height:300px;fill:var(--green)">
+  <svg class="hero-sham">
     <use href="#sham"/>
   </svg>
 
   <!-- 353 logo mark top right -->
   <div class="hero-logo-mark">
-    <img src="img/logo-353.png" alt="353"/>
+    <img src="../Assets/logo/353-sans-fond.png" alt="353"/>
   </div>
 
   <!-- Me -->
   <div class="hero-photo">
-    <img src="Assets/images/hero/lyle.webp" alt="Lyle Schofield">
+    <img src="../Assets/images/hero/lyle.webp" alt="Lyle Schofield">
   </div>
 
   <div class="hero-cnt">
@@ -200,21 +178,15 @@
   </div>
 </section>
 
-<script src="slideshow.js"></script>
-
-</body>
-</html>
-
-
 <!-- ===================== PARTNERS ===================== -->
-<section id="partners-home" class="sec" style="background:var(--black)">
+<section id="partners-home" class="sec bg-black">
   <div class="w">
 
     <div class="ptnr-header">
-      <video class="sig-vid" src="Assets/vid/hero/signature.webm" autoplay muted loop playsinline></video>
+      <video class="sig-vid" src="../Assets/vid/hero/signature.webm" autoplay muted loop playsinline></video>
       <div class="ey">Partners &amp; Sponsors</div>
       <h2>BACKED BY <span class="or">LEADERS</span></h2>
-      <div class="rule" style="background:var(--orange)"></div>
+      <div class="rule rule-or"></div>
     </div>
 
     <p class="ptnr-intro">
@@ -226,7 +198,7 @@
         <div class="ptnr-accent"></div>
         <div class="ptnr-name">OVERFINCH</div>
         <p class="ptnr-desc">Premium automotive engineering and customization specialists.</p>
-        <a href="https://overfinch.com/us/the-journey" class="btn bg">
+        <a href="https://overfinch.com/us/the-journey" target="_blank" rel="noopener noreferrer" class="btn bg">
           LEARN MORE
           <svg class="arr" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
@@ -238,7 +210,7 @@
         <div class="ptnr-accent"></div>
         <div class="ptnr-name">TERRE DOREE</div>
         <p class="ptnr-desc">Luxury fragrances and wellness products for the modern athlete.</p>
-        <a href="https://www.terres-dorees.com/" class="btn bg">
+        <a href="https://www.terres-dorees.com/" target="_blank" rel="noopener noreferrer" class="btn bg">
           LEARN MORE
           <svg class="arr" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
@@ -248,13 +220,13 @@
     </div>
 
     <div class="ptnr-cta">
-      <a href="partners.html#contact" class="btn bo">
-                BECOME A PARTNER
+      <a href="Partners.html#contact" class="btn bo">
+        BECOME A PARTNER
         <svg class="arr" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
         </svg>
       </a>
-      <a href="partners.html" class="btn bg">
+      <a href="Partners.html" class="btn bg">
         VIEW ALL PARTNERS
         <svg class="arr" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
@@ -264,3 +236,13 @@
 
   </div>
 </section>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Lyle Schofield. All rights reserved.</p>
+</footer>
+
+<script src="slideshow.js"></script>
+<script src="nav.js"></script>
+
+</body>
+</html>

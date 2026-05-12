@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -6,32 +8,13 @@
   <link rel="stylesheet" href="../CSS/main.css"/>
   <link rel="stylesheet" href="../CSS/career.css"/>
 </head>
+<body>
 
   <!-- Navigation -->
-  <nav>
-    <a href="HomePage.html" class="nav-logo">
-      <img src="../Assets/logo/353-sans-fond.png" alt="353" class="logo-default">
-      <img src="../Assets/logo/353-simple-sans-fond.png" alt="353" class="logo-hover">
-    </a>
-    <ul class="nav-links">
-      <li><a href="HomePage.html#about">About</a></li>
-      <li><a href="Career.html">Career</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="Partners.html">Partners</a></li>
-    </ul>
-    <div class="nav-r">
-      <div class="soc">
-        <a href="https://www.instagram.com/lyle.schofield/" target="_blank">IG</a>
-        <a href="https://www.youtube.com/channel/UCOOhixOmg9xK0StpdplDpQQ" target="_blank">YT</a>
-        <a href="https://www.tiktok.com/@lyle.schofield" target="_blank">TT</a>
-        <a href="https://www.facebook.com/lyle.schofield.racing" target="_blank">FB</a>
-      </div>
-      <a href="../shop.html" class="btn bo" style="padding:9px 20px;font-size:11px;margin-left:10px">Shop</a>
-    </div>
-  </nav>
+  <nav id="site-nav"></nav>
 
   <!-- Stats Bar -->
-  <section class="stats" style="margin-top: 65px;">
+  <section class="stats page-top">
     <div class="si">
       <div class="st"><span class="sn">40</span><div class="sl">GT Race Starts</div></div>
       <div class="st"><span class="sn">26</span><div class="sl">Race Wins</div></div>
@@ -41,25 +24,25 @@
   </section>
 
   <!-- Page Header -->
-  <section class="sec" style="background: var(--black); padding-bottom: 40px;">
+  <section class="sec bg-black sec-pb-sm">
     <div class="w">
       <div class="ey">Racing Record</div>
       <h2>FROM KARTING TO<br><span class="or">CHAMPION</span></h2>
-      <div class="rule" style="background: var(--orange);"></div>
-      <p style="color: var(--grey); font-size: 15px; line-height: 1.8; max-width: 640px;">
+      <div class="rule rule-or"></div>
+      <p class="career-intro">
         GT driver and 2025 Ultimate Cup Overall Champion. Experienced in Ferrari 488 &amp; 296 Challenge machinery, with Ferrari 488 GT3 and Maserati MC20 GT2 manufacturer testing. Proven consistency across sprint and endurance formats.
       </p>
     </div>
   </section>
 
   <!-- Season Timeline -->
-  <section class="sec" style="background: var(--surf); padding-top: 20px;">
+  <section class="sec bg-surf sec-pt-sm">
     <div class="w">
       <div class="ey">Season by Season</div>
       <h2>RACE <span class="bl">HISTORY</span></h2>
       <div class="rule"></div>
 
-      <div class="timeline" style="margin-top: 48px;">
+      <div class="timeline">
 
         <!-- 2025 Ultimate Cup - OVERALL CHAMPION -->
         <div class="season-row">
@@ -97,7 +80,7 @@
             <div class="season-series">Italian GT Cup</div>
             <div class="season-name">GT Sprint</div>
             <div class="season-car">Ferrari 488 Challenge Evo &bull; Team SR&amp;R</div>
-            <div class="mini-stats" style="margin-top: 24px;">
+            <div class="mini-stats mini-stats-mt">
               <div class="ms-item"><div class="ms-num">2</div><div class="ms-lbl">Wins</div></div>
               <div class="ms-item"><div class="ms-num">4</div><div class="ms-lbl">Podiums</div></div>
               <div class="ms-item"><div class="ms-num">1</div><div class="ms-lbl">Poles</div></div>
@@ -112,7 +95,7 @@
             <div class="season-series">National Championship</div>
             <div class="season-name">GT Light</div>
             <div class="season-car">Ferrari 488 Challenge Evo</div>
-            <div class="mini-stats" style="margin-top: 24px;">
+            <div class="mini-stats mini-stats-mt">
               <div class="ms-item"><div class="ms-num">3</div><div class="ms-lbl">Wins</div></div>
               <div class="ms-item"><div class="ms-num">4</div><div class="ms-lbl">Podiums</div></div>
               <div class="ms-item"><div class="ms-num">4</div><div class="ms-lbl">Poles</div></div>
@@ -157,7 +140,7 @@
             <div class="season-series">Italian GT Cup</div>
             <div class="season-name">GT Endurance</div>
             <div class="season-car">Ferrari 488 Challenge Evo &bull; Team SR&amp;R</div>
-            <div class="mini-stats" style="margin-top: 24px;">
+            <div class="mini-stats mini-stats-mt">
               <div class="ms-item"><div class="ms-num">0</div><div class="ms-lbl">Wins</div></div>
               <div class="ms-item"><div class="ms-num">3</div><div class="ms-lbl">Podiums</div></div>
               <div class="ms-item"><div class="ms-num">0</div><div class="ms-lbl">Poles</div></div>
@@ -167,12 +150,12 @@
 
         <!-- Formula 4 -->
         <div class="season-row">
-          <div class="season-year" style="font-size:36px; padding-top: 8px;">F4</div>
+          <div class="season-year season-year-sm">F4</div>
           <div class="season-body">
             <div class="season-series">Single Seater</div>
             <div class="season-name">Formula 4</div>
             <div class="season-car">Open-wheel experience prior to GT programme</div>
-            <div class="mini-stats" style="margin-top: 24px;">
+            <div class="mini-stats mini-stats-mt">
               <div class="ms-item"><div class="ms-num">1</div><div class="ms-lbl">Wins</div></div>
               <div class="ms-item"><div class="ms-num">6</div><div class="ms-lbl">Podiums</div></div>
               <div class="ms-item"><div class="ms-num">3</div><div class="ms-lbl">Poles</div></div>
@@ -182,7 +165,7 @@
 
         <!-- Karting -->
         <div class="season-row">
-          <div class="season-year" style="font-size:36px; padding-top: 8px;">KRT</div>
+          <div class="season-year season-year-sm">KRT</div>
           <div class="season-body">
             <div class="season-series">Early Career</div>
             <div class="season-name">Karting</div>
@@ -195,7 +178,7 @@
   </section>
 
   <!-- Manufacturer Experience -->
-  <section class="sec" style="background: var(--black);">
+  <section class="sec bg-black">
     <div class="w">
       <div class="ey">Factory Testing</div>
       <h2>MANUFACTURER <span class="bl">EXPERIENCE</span></h2>
@@ -216,11 +199,11 @@
   </section>
 
   <!-- Driver Profile -->
-  <section class="sec" style="background: var(--surf);">
+  <section class="sec bg-surf">
     <div class="w">
       <div class="ey">Behind the Helmet</div>
       <h2>DRIVER <span class="or">PROFILE</span></h2>
-      <div class="rule" style="background: var(--orange);"></div>
+      <div class="rule rule-or"></div>
       <div class="attr-grid">
         <div class="attr-item">
           <div class="attr-label">FIA License</div>
@@ -251,9 +234,10 @@
   </section>
 
   <!-- Footer -->
-  <footer style="background: var(--surf); border-top: 1px solid var(--bdr); padding: 40px; text-align: center; color: var(--grey);">
+  <footer class="site-footer">
     <p>&copy; 2026 Lyle Schofield. All rights reserved.</p>
   </footer>
 
+  <script src="nav.js"></script>
 </body>
 </html>

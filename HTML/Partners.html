@@ -9,47 +9,25 @@
 </head>
 <body>
     <!-- Navigation -->
-<nav>
-  <a href="HomePage.html" class="nav-logo">
-  <img src="../Assets/logo/353-sans-fond.png" alt="353" class="logo-default">
-  <img src="../Assets/logo/353-simple-sans-fond.png" alt="353" class="logo-hover">
-</a>
-
-  <ul class="nav-links">
-    <li><a href="HomePage.html#about">About</a></li>
-    <li><a href="Career.html">Career</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="Partners.html">Partners</a></li>
-  </ul>
-
-    <div class="nav-r">
-    <div class="soc">
-      <a href="https://www.instagram.com/lyle.schofield/" target="_blank">IG</a>
-      <a href="https://www.youtube.com/channel/UCOOhixOmg9xK0StpdplDpQQ" target="_blank">YT</a>
-      <a href="https://www.tiktok.com/@lyle.schofield" target="_blank">TT</a>
-      <a href="https://www.facebook.com/lyle.schofield.racing" target="_blank">FB</a>
-    </div>
-    <a href="shop.html" class="btn bo" style="padding:9px 20px;font-size:11px;margin-left:10px">Shop</a>
-  </div>
-</nav>
+<nav id="site-nav"></nav>
 
     <!-- Hero Section -->
-    <section class="hero" style="margin-top: 65px; min-height: 60vh;">
+    <section class="hero hero-short page-top">
         <div class="hero-bg"></div>
-        <div class="w" style="position: relative; z-index: 10; width: 100%; padding-bottom: 60px;">
+        <div class="w partners-hero-body">
 
         <div class="ptnr-header">
             <video class="sig-vid" src="../Assets/vid/hero/signature.webm" autoplay muted loop playsinline></video>
             <div class="ey">Partners &amp; Sponsors</div>
             <h2>BACKED BY <span class="or">LEADERS</span></h2>
-            <div class="rule" style="background:var(--orange)"></div>
+            <div class="rule rule-or"></div>
             <p class="ptnr-intro">Proud to represent brands who share our commitment to performance, precision, and excellence.</p>
         </div>
 
     </section>
 
     <!-- Sponsors Grid Section -->
-    <section class="sec" style="background: var(--surf);">
+    <section class="sec bg-surf">
         <div class="w">
             <div class="sponsors-grid">
                 <!-- Overfinch -->
@@ -57,9 +35,9 @@
                     <div class="sponsor-image">
                         <img src="../Assets/logo/overfinch_logo.png" alt="Overfinch">
                     </div>
-                    <h3 style="font-family: var(--fh); font-size: 24px; margin-bottom: 12px;">OVERFINCH</h3>
-                    <p style="color: var(--grey); margin-bottom: 20px; line-height: 1.6;">Premium automotive engineering and customization specialists.</p>
-                    <a href="https://overfinch.com/us/the-journey" class="btn bb">Learn More</a>
+                    <h3>OVERFINCH</h3>
+                    <p>Premium automotive engineering and customization specialists.</p>
+                    <a href="https://overfinch.com/us/the-journey" target="_blank" rel="noopener noreferrer" class="btn bb">Learn More</a>
                 </div>
 
                 <!-- Terre Doree -->
@@ -67,9 +45,9 @@
                     <div class="sponsor-image">
                         <img src="../Assets/logo/TerresDorees_logo.png" alt="Terre Doree">
                     </div>
-                    <h3 style="font-family: var(--fh); font-size: 24px; margin-bottom: 12px;">TERRE DOREE</h3>
-                    <p style="color: var(--grey); margin-bottom: 20px; line-height: 1.6;">Luxury fragrances and wellness products for the modern athlete.</p>
-                    <a href="https://www.terres-dorees.com/" class="btn bb">Learn More</a>
+                    <h3>TERRE DOREE</h3>
+                    <p>Luxury fragrances and wellness products for the modern athlete.</p>
+                    <a href="https://www.terres-dorees.com/" target="_blank" rel="noopener noreferrer" class="btn bb">Learn More</a>
                 </div>
             </div>
         </div>
@@ -77,12 +55,12 @@
 
   <!-- Contact Section -->
 <section class="sec" id="contact">
-    <div class="w" style="max-width: 700px;">
+    <div class="w w-narrow">
         <div class="ey"><span class="or">Get In Touch</span></div>
         <h2>Partnership <span class="bl">Enquiries</span></h2>
         <div class="rule"></div>
 
-        <form class="contact-form" action="https://formspree.io/f/mwvrlown" method="POST" style="margin-top: 50px;">
+        <form class="contact-form" action="https://formspree.io/f/mwvrlown" method="POST">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -108,15 +86,17 @@
                 <textarea id="message" name="message" rows="6" required></textarea>
             </div>
 
-            <button type="submit" class="btn bo" style="width: fit-content; margin-top: 10px;">Send Message</button>
+            <button type="submit" class="btn bo">Send Message</button>
         </form>
     </div>
 </section>
 
 
     <!-- Footer -->
-    <footer style="background: var(--surf); border-top: 1px solid var(--bdr); padding: 40px; text-align: center; color: var(--grey);">
+    <footer class="site-footer">
         <p>&copy; 2026 Lyle Schofield. All rights reserved.</p>
     </footer>
+
+    <script src="nav.js"></script>
 </body>
 </html>

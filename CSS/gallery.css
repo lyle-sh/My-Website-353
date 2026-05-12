@@ -103,3 +103,31 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* ============================================================
+   RESPONSIVE  —  768px breakpoint
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Gallery year nav: scrollable row */
+  .gallery-nav .w {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .gallery-nav .w::-webkit-scrollbar { display: none; }
+  .gnav-btn { white-space: nowrap; padding: 16px 20px; }
+
+  /* Season year number */
+  .season-yr { font-size: clamp(48px, 12vw, 72px); letter-spacing: -2px; }
+
+  /* Photo grid: 2 columns */
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  /* Photo grid: single column, no wide spans */
+  .photo-grid { grid-template-columns: 1fr; }
+  .photo-item.wide { grid-column: span 1; }
+}

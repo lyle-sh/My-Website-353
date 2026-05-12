@@ -317,3 +317,111 @@ nav::before {
 .ptnr-header h2,
 .ptnr-header .rule,
 .ptnr-header .ptnr-intro { position: relative; z-index: 1; }
+
+
+/* ---- ACTIVE NAV LINK ---- */
+.nav-links a.active         { color: #fff; }
+.nav-links a.active::after  { width: 100%; }
+
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+/* Backgrounds */
+.bg-black { background: var(--black); }
+.bg-surf  { background: var(--surf); }
+
+/* Rule color variant */
+.rule-or { background: var(--orange); }
+
+/* Button size modifier */
+.btn-sm { padding: 9px 20px; font-size: 11px; margin-left: 10px; }
+
+/* Page top offset (pages without a full hero) */
+.page-top { margin-top: 65px; }
+
+/* Section padding modifiers */
+.sec-pb-sm { padding-bottom: 40px; }
+.sec-pt-sm { padding-top: 20px; }
+
+/* Hero height variant */
+.hero-short { min-height: 60vh; }
+
+/* Narrow content column */
+.w-narrow { max-width: 700px; }
+
+/* Shared footer */
+.site-footer {
+  background: var(--surf);
+  border-top: 1px solid var(--bdr);
+  padding: 40px;
+  text-align: center;
+  color: var(--grey);
+}
+
+
+/* ============================================================
+   HAMBURGER BUTTON  (hidden on desktop)
+   ============================================================ */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 4px;
+  margin-left: 12px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ============================================================
+   RESPONSIVE  —  768px breakpoint
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Global spacing */
+  .w   { padding: 0 20px; }
+  .sec { padding: 60px 0; }
+
+  /* Nav: show hamburger, hide links & socials */
+  .nav-hamburger { display: flex; }
+  .soc           { display: none; }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 65px; left: 0; right: 0;
+    background: rgba(10,10,10,.97);
+    border-bottom: 1px solid var(--bdr);
+    flex-direction: column;
+    padding: 8px 0 16px;
+    gap: 0;
+    z-index: 998;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li   { border-bottom: 1px solid var(--bdr); }
+  .nav-links a    { display: block; padding: 14px 24px; font-size: 13px; }
+
+  /* Stats: 2×2 grid */
+  .si { grid-template-columns: repeat(2, 1fr); }
+  .st:nth-child(even)  { border-right: none; }
+  .st:nth-child(n + 3) { border-top: 1px solid var(--bdr); }
+
+  /* Partners grid */
+  .ptnr-grid { grid-template-columns: 1fr; }
+  .ptnr-cta  { flex-direction: column; }
+  .ptnr-cta .btn { text-align: center; justify-content: center; }
+}

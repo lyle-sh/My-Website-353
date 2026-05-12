@@ -37,6 +37,26 @@
   object-fit: contain;
 }
 
+/* ---- PARTNERS HERO BODY ---- */
+.partners-hero-body {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding-bottom: 60px;
+}
+
+/* ---- SPONSOR CARD TYPOGRAPHY ---- */
+.sponsor-card h3 {
+  font-family: var(--fh);
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.sponsor-card p {
+  color: var(--grey);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
 /* ---- CONTACT FORM ---- */
 .contact-form {
   display: flex;
@@ -74,4 +94,9 @@
   background: rgba(255,255,255,.08);
   border-color: var(--orange);
   box-shadow: 0 0 10px rgba(255,94,0,.15);
+}
+
+.contact-form .btn[type="submit"] {
+  width: fit-content;
+  margin-top: 10px;
 }
