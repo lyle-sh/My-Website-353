@@ -226,6 +226,70 @@ nav::before {
 }
 .soc a:hover { color: var(--orange); }
 
+/* Nav hover preview — trails the cursor, injected by nav.js */
+.nav-preview {
+  position: fixed;
+  top: 0; left: 0;
+  width: 200px;
+  height: 250px;
+  /* Offset from the cursor: centred horizontally, clear of the 65px bar */
+  margin: 42px 0 0 -100px;
+  z-index: 998;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s ease;
+  will-change: transform;
+}
+.nav-preview.on { opacity: 1; }
+
+.nav-preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.07);
+  filter: grayscale(1) contrast(1.08);
+  border-top: 3px solid var(--orange);
+  transition: opacity .3s ease,
+              transform .6s cubic-bezier(.16,1,.3,1),
+              filter .6s ease;
+}
+.nav-preview img.on {
+  opacity: 1;
+  transform: scale(1);
+  filter: grayscale(0) contrast(1);
+}
+
+
+/* ============================================================
+   IMAGE SWAP  —  base image cross-fades to a hover image
+   Markup: .img-swap > img.is-base + img.is-hover
+   ============================================================ */
+.img-swap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.img-swap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .5s ease,
+              transform .8s cubic-bezier(.16,1,.3,1);
+}
+.img-swap .is-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.07);
+}
+.img-swap:hover .is-base,
+.img-swap:focus-within .is-base  { opacity: 0; transform: scale(1.04); }
+.img-swap:hover .is-hover,
+.img-swap:focus-within .is-hover { opacity: 1; transform: scale(1); }
+
 
 /* ============================================================
    HERO  (base styles shared across pages)
@@ -305,6 +369,28 @@ nav::before {
 .ptnr-card:hover { border-color: var(--orange); }
 .ptnr-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--orange); transform: scaleY(0); transform-origin: bottom; transition: transform .4s ease; }
 .ptnr-card:hover .ptnr-accent { transform: scaleY(1); }
+
+/* Photo that fades up behind the card content on hover */
+.ptnr-media { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.ptnr-media img {
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0;
+  transform: scale(1.09);
+  filter: grayscale(1);
+  transition: opacity .55s ease, transform .9s cubic-bezier(.16,1,.3,1);
+}
+/* Keeps the copy readable once the photo is up */
+.ptnr-media::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(10,10,10,.94) 0%, rgba(10,10,10,.72) 55%, rgba(10,10,10,.5) 100%);
+  opacity: 0;
+  transition: opacity .55s ease;
+}
+.ptnr-card:hover .ptnr-media img    { opacity: .55; transform: scale(1); }
+.ptnr-card:hover .ptnr-media::after { opacity: 1; }
+
+/* Content sits above the photo */
+.ptnr-name, .ptnr-desc, .ptnr-card .btn { position: relative; z-index: 1; }
 .ptnr-name { font-family: var(--fh); font-size: clamp(28px,3vw,40px); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; color: #fff; margin-bottom: 14px; }
 .ptnr-desc { color: var(--grey); font-size: 14px; line-height: 1.75; margin-bottom: 28px; }
 .ptnr-cta  { display: flex; gap: 16px; margin-top: 48px; }
@@ -312,7 +398,20 @@ nav::before {
 
 /* Signature video header */
 .ptnr-header { position: relative; }
-.sig-vid { position: absolute; top: 10%; left: 50%; transform: translate(-50%,-50%); width: 1000px; opacity: 0.35; pointer-events: none; z-index: 0; }
+/* The .webm has a solid black background baked in (no alpha), so plain opacity
+   left a visible 1000px box bleeding over the section above. `screen` drops the
+   black entirely and keeps only the light signature strokes. */
+.sig-vid {
+  position: absolute;
+  top: 10%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1000px;
+  max-width: 100%;
+  opacity: .5;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
 .ptnr-header .ey,
 .ptnr-header h2,
 .ptnr-header .rule,
@@ -385,6 +484,24 @@ nav::before {
 .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-hamburger.open span:nth-child(2) { opacity: 0; }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ============================================================
+   REDUCED MOTION  —  keep the state changes, drop the movement
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .nav-preview img,
+  .img-swap img,
+  .ptnr-media img { transform: none !important; }
+}
 
 
 /* ============================================================

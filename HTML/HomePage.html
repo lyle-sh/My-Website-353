@@ -12,12 +12,6 @@
 
 <!-- Reusable SVG symbols -->
 <svg style="display:none">
-  <symbol id="sham" viewBox="0 0 100 120">
-    <circle cx="50" cy="32" r="22"/>
-    <circle cx="28" cy="58" r="22"/>
-    <circle cx="72" cy="58" r="22"/>
-    <rect x="46" y="68" width="8" height="38" rx="4"/>
-  </symbol>
   <symbol id="arr" viewBox="0 0 24 24">
     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" fill="none"/>
   </symbol>
@@ -30,13 +24,8 @@
 <!-- ====== HERO ====== -->
 <section class="hero">
   <!-- img/hero.jpg = pit lane shot, Lyle getting into the Ferrari GT -->
-  <img class="hero-img" src="../Assets/images/hero/lyle.webp" alt="Lyle Schofield in the Ferrari GT"/>
+  <img class="hero-img" src="../Assets/images/italian-gt/misano-panning.webp" alt=""/>
   <div class="hero-bg"></div>
-
-  <!-- Faded Ireland Outline --> 
-  <div class="ireland-outline">
-    <img src="../Assets/images/Ireland.svg" alt="Ireland">
-  </div>
 
   <div class="s1"></div>
   <div class="s2"></div>
@@ -47,11 +36,6 @@
   <!-- Ghost racing number -->
   <div class="g353">353</div>
 
-  <!-- Shamrock watermark -->
-  <svg class="hero-sham">
-    <use href="#sham"/>
-  </svg>
-
   <!-- 353 logo mark top right -->
   <div class="hero-logo-mark">
     <img src="../Assets/logo/353-sans-fond.png" alt="353"/>
@@ -59,7 +43,7 @@
 
   <!-- Me -->
   <div class="hero-photo">
-    <img src="../Assets/images/hero/lyle.webp" alt="Lyle Schofield">
+    <img src="../Assets/images/hero/lyle-2026.webp" alt="Lyle Schofield in 2026 SR&amp;R race suit holding his helmet">
   </div>
 
   <div class="hero-cnt">
@@ -69,6 +53,7 @@
       <span class="h1a">Lyle</span>
       <span class="h1b">Schofield</span>
     </h1>
+  </div>
 </section>
 
 
@@ -163,8 +148,11 @@
   </div>
 
   <div class="about-image-wrapper">
-    <img src="../Assets/images/hero/driver-win-face.webp" alt="Lyle Schofield"/>
-    
+    <div class="img-swap">
+      <img class="is-base"  src="../Assets/images/hero/driver-win-face.webp" alt="Lyle Schofield celebrating a win"/>
+      <img class="is-hover" src="../Assets/images/hero/driver-entering-cockpit-car.webp" alt="" aria-hidden="true"/>
+    </div>
+
     <div class="irish-badge">
       <span class="irish-flag">
         <span style="background: var(--green)"></span>
@@ -175,6 +163,76 @@
     </div>
   </div>
 </div>
+  </div>
+</section>
+
+<!-- ===================== 2026 ITALIAN GT ENDURANCE ===================== -->
+<section id="italian-gt" class="sec bg-surf">
+  <div class="w">
+
+    <div class="ey">2026 Campaign</div>
+    <h2>Italian GT <span class="bl">Endurance</span></h2>
+    <div class="rule"></div>
+
+    <div class="igt-lead">
+      <div class="igt-copy">
+        <p class="igt-intro">
+          A third consecutive season with SR&amp;R, and a step up to the Campionato Italiano Gran
+          Turismo Endurance &mdash; the series Ferrari, Lamborghini and Porsche contest across
+          Italy&rsquo;s benchmark circuits, in three-hour races shared between three drivers.
+        </p>
+
+        <dl class="igt-facts">
+          <div><dt>Championship</dt><dd>Italian GT Endurance &mdash; GT Cup, 2nd Division</dd></div>
+          <div><dt>Car</dt><dd>Ferrari 488 Challenge &mdash; No. 433</dd></div>
+          <div><dt>Team</dt><dd>SR&amp;R &mdash; Scuderia Ravetto &amp; Ruberti, Verona</dd></div>
+          <div><dt>Co-drivers</dt><dd>Giacomo Riva &amp; Andrea Bodellini</dd></div>
+        </dl>
+
+        <ol class="igt-rounds">
+          <li class="run"><span class="rn">R1</span><span class="rc">Misano</span><em>8&ndash;10 May</em></li>
+          <li class="run"><span class="rn">R2</span><span class="rc">Monza</span><em>19&ndash;21 Jun</em></li>
+          <li><span class="rn">R3</span><span class="rc">Imola</span><em>4&ndash;6 Sep</em></li>
+          <li><span class="rn">R4</span><span class="rc">Mugello</span><em>30 Oct&ndash;1 Nov</em></li>
+        </ol>
+      </div>
+
+      <figure class="igt-card">
+        <img src="../Assets/images/italian-gt/driver-card-433.webp"
+             alt="Official 2026 Italian GT driver card for Lyle Schofield, car 433, Ferrari 488 Challenge, SR&amp;R"
+             loading="lazy" width="2048" height="1365"/>
+      </figure>
+    </div>
+
+    <div class="igt-grid">
+      <figure class="igt-shot">
+        <img src="../Assets/images/italian-gt/misano-panning.webp" alt="The No. 433 Ferrari 488 Challenge at speed at Misano" loading="lazy" width="1600" height="1066"/>
+        <figcaption>Misano <span>&mdash; No. 433 at speed</span></figcaption>
+      </figure>
+      <figure class="igt-shot">
+        <img src="../Assets/images/italian-gt/misano-wet-lead.webp" alt="No. 433 leading a Porsche through a wet corner at Misano" loading="lazy" width="1600" height="1066"/>
+        <figcaption>Misano <span>&mdash; leading in the wet</span></figcaption>
+      </figure>
+      <figure class="igt-shot">
+        <img src="../Assets/images/italian-gt/misano-spray-lights.webp" alt="No. 433 running with headlights on through heavy spray at Misano" loading="lazy" width="1600" height="1066"/>
+        <figcaption>Misano <span>&mdash; headlights in the spray</span></figcaption>
+      </figure>
+      <figure class="igt-shot">
+        <img src="../Assets/images/italian-gt/misano-side.webp" alt="Side-on view of the No. 433 Ferrari 488 Challenge at Misano" loading="lazy" width="1600" height="1066"/>
+        <figcaption>Misano <span>&mdash; the 488 Challenge</span></figcaption>
+      </figure>
+      <figure class="igt-shot">
+        <img src="../Assets/images/italian-gt/misano-kerbs.webp" alt="No. 433 riding the kerbs at Misano" loading="lazy" width="1600" height="1066"/>
+        <figcaption>Misano <span>&mdash; on the kerbs</span></figcaption>
+      </figure>
+      <figure class="igt-shot">
+        <img src="../Assets/images/italian-gt/misano-battle.webp" alt="No. 433 racing wheel to wheel with a Lamborghini at Misano" loading="lazy" width="1600" height="1067"/>
+        <figcaption>Misano <span>&mdash; wheel to wheel</span></figcaption>
+      </figure>
+    </div>
+
+    <p class="igt-credit">Round 1, Misano Adriatico. Photography &copy; ACI Sport.</p>
+
   </div>
 </section>
 
@@ -195,6 +253,7 @@
 
     <div class="ptnr-grid">
       <div class="ptnr-card">
+        <div class="ptnr-media"><img src="../Assets/images/hero/driver-outside-car-side.webp" alt="" aria-hidden="true"></div>
         <div class="ptnr-accent"></div>
         <div class="ptnr-name">OVERFINCH</div>
         <p class="ptnr-desc">Premium automotive engineering and customization specialists.</p>
@@ -207,6 +266,7 @@
       </div>
 
       <div class="ptnr-card">
+        <div class="ptnr-media"><img src="../Assets/images/hero/driver-podium-champain-face.webp" alt="" aria-hidden="true"></div>
         <div class="ptnr-accent"></div>
         <div class="ptnr-name">TERRE DOREE</div>
         <p class="ptnr-desc">Luxury fragrances and wellness products for the modern athlete.</p>
@@ -243,6 +303,7 @@
 
 <script src="slideshow.js"></script>
 <script src="nav.js"></script>
+<script src="interactions.js"></script>
 
 </body>
 </html>
