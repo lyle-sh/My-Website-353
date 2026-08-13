@@ -315,6 +315,13 @@
   padding-top: 2px;
 }
 .igt-facts dd { font-size: 14px; color: #fff; }
+.igt-lead-now {
+  font-family: var(--fh);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--orange);
+}
 
 /* Calendar */
 .igt-rounds { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
@@ -339,6 +346,21 @@
 /* Rounds already run */
 .igt-rounds .run { border-color: rgba(255,94,0,.45); }
 .igt-rounds .run .rn { color: var(--orange); }
+/* Finishing position for a round already run */
+.igt-rounds .rr {
+  font-family: var(--fh);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 2px 7px;
+  border: 1px solid #555;
+  color: #ddd;
+}
+.igt-rounds .rr-win {
+  border-color: var(--orange);
+  background: rgba(255,94,0,.12);
+  color: var(--orange);
+}
 
 /* Official driver card */
 .igt-card { border: 1px solid var(--bdr); overflow: hidden; }
