@@ -229,6 +229,125 @@
 }
 .opp-desc { color: var(--grey); font-size: 14px; line-height: 1.75; }
 
+/* ---- TESTIMONIALS ---- */
+.tst-grid {
+  display: grid;
+  /* auto-fit + a max track width: a photo-plus-text card needs ~860px, so one
+     sits per row on desktop and further cards stack below without restyling. */
+  grid-template-columns: repeat(auto-fit, minmax(340px, 860px));
+  gap: 20px;
+  align-items: start;
+  margin-top: 48px;
+}
+.tst-card {
+  background: var(--black);
+  border: 1px solid var(--bdr);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .3s;
+  /* Portrait beside the copy; `start` keeps it top-aligned instead of
+     stretching down the card when the full testimonial is expanded. */
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.tst-card:hover { border-color: var(--orange); }
+
+.tst-photo {
+  width: 100%;
+  /* height:auto is required — the img's width/height attributes would
+     otherwise give it a definite height and aspect-ratio would be ignored. */
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--bdr);
+}
+.tst-accent {
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--orange);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform .4s ease;
+}
+.tst-card:hover .tst-accent { transform: scaleY(1); }
+
+.tst-quote {
+  font-family: var(--fh);
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--orange);
+  max-width: 26ch;
+  margin-bottom: 26px;
+}
+
+.tst-body p {
+  color: rgba(255,255,255,.7);
+  font-size: 14px;
+  line-height: 1.75;
+  max-width: 65ch;
+  margin-bottom: 18px;
+}
+.tst-body p:last-child { margin-bottom: 0; }
+
+/* Read more / less — native <details>, no JS */
+.tst-more > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--fh);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 6px 0;
+  transition: color .3s;
+}
+.tst-more > summary::-webkit-details-marker { display: none; }
+.tst-more > summary::after {
+  content: '';
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+}
+.tst-more > summary:hover { color: #fff; }
+.tst-more > summary:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
+}
+.tst-more[open] > summary { margin-bottom: 18px; }
+.tst-more .tt-close       { display: none; }
+.tst-more[open] .tt-open  { display: none; }
+.tst-more[open] .tt-close { display: inline; }
+
+.tst-attr {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--bdr);
+}
+.tst-name {
+  font-family: var(--fh);
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+.tst-role {
+  font-family: var(--fh);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-top: 8px;
+}
+
 /* ---- BOOKING ---- */
 .book-section { text-align: center; }
 .book-section .rule { margin: 16px auto 24px; }
@@ -288,6 +407,10 @@
   .includes-grid  { grid-template-columns: repeat(2, 1fr); }
   .experience-grid { grid-template-columns: 1fr; gap: 48px; }
   .opp-grid       { grid-template-columns: 1fr; }
+
+  .tst-grid       { grid-template-columns: 1fr; }
+  .tst-card       { padding: 28px 22px; grid-template-columns: 1fr; gap: 24px; }
+  .tst-photo      { max-width: 200px; }
 
   .book-contacts  { flex-direction: column; align-items: center; }
   .book-contact   { width: 100%; max-width: 340px; }
