@@ -2,9 +2,10 @@
   publish = "."
 
 # Legacy redirects: pages used to live under HTML/ and were served at /html/<page>.
-# Order matters — Netlify takes the first match, so the homepage rules come before
-# the catch-all splat (which would otherwise send it to a now-nonexistent
-# /HomePage.html). Matching is case-insensitive, so /HTML/... is covered too.
+# Matching is case-sensitive, so the on-disk /HTML/ casing needs its own rules
+# alongside the lowercase form Pretty URLs produced. Order matters — Netlify takes
+# the first match, so the homepage rules come before the catch-all splats, which
+# would otherwise point at a now-nonexistent /HomePage.html.
 [[redirects]]
   from = "/html/homepage"
   to = "/"
@@ -16,6 +17,16 @@
   status = 301
 
 [[redirects]]
+  from = "/HTML/HomePage.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
   from = "/html/*"
+  to = "/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/HTML/*"
   to = "/:splat"
   status = 301
