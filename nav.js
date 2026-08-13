@@ -3,12 +3,12 @@
   if (!nav) return;
 
   nav.innerHTML = `
-<a href="HomePage.html" class="nav-logo">
-  <img src="../Assets/logo/353-sans-fond.png" alt="353" class="logo-default">
-  <img src="../Assets/logo/353-simple-sans-fond.png" alt="353" class="logo-hover">
+<a href="index.html" class="nav-logo">
+  <img src="Assets/logo/353-sans-fond.png" alt="353" class="logo-default">
+  <img src="Assets/logo/353-simple-sans-fond.png" alt="353" class="logo-hover">
 </a>
 <ul class="nav-links">
-  <li><a href="HomePage.html#about" data-page="homepage">About</a></li>
+  <li><a href="index.html#about" data-page="homepage">About</a></li>
   <li><a href="Career.html"         data-page="career">Career</a></li>
   <li><a href="gallery.html"        data-page="gallery">Gallery</a></li>
   <li><a href="trackdays.html"      data-page="trackdays">Track Days</a></li>
@@ -27,19 +27,21 @@
   <span></span><span></span><span></span>
 </button>`;
 
-  // Mark active link by current filename
-  const page = window.location.pathname.split('/').pop().toLowerCase().replace('.html', '');
+  // Mark active link by current filename. The homepage is served at "/" (empty
+  // last segment) in production and as "index" locally, so both alias to homepage.
+  const file = window.location.pathname.split('/').pop().toLowerCase().replace('.html', '');
+  const page = (file === '' || file === 'index') ? 'homepage' : file;
   nav.querySelectorAll('.nav-links a[data-page]').forEach(link => {
     if (link.dataset.page === page) link.classList.add('active');
   });
 
   // Hover preview image that trails the cursor over the nav links
   const PREVIEWS = {
-    homepage:  '../Assets/images/hero/driver-face.webp',
-    career:    '../Assets/images/hero/driver-podium-champain-face.webp',
-    gallery:   '../Assets/images/hero/driver-win-face.webp',
-    trackdays: '../Assets/images/hero/driver-cockpit-front.webp',
-    partners:  '../Assets/images/hero/driver-outside-car-side.webp'
+    homepage:  'Assets/images/hero/driver-face.webp',
+    career:    'Assets/images/hero/driver-podium-champain-face.webp',
+    gallery:   'Assets/images/hero/driver-win-face.webp',
+    trackdays: 'Assets/images/hero/driver-cockpit-front.webp',
+    partners:  'Assets/images/hero/driver-outside-car-side.webp'
   };
 
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {

@@ -1,7 +1,21 @@
 [build]
   publish = "."
 
+# Legacy redirects: pages used to live under HTML/ and were served at /html/<page>.
+# Order matters — Netlify takes the first match, so the homepage rules come before
+# the catch-all splat (which would otherwise send it to a now-nonexistent
+# /HomePage.html). Matching is case-insensitive, so /HTML/... is covered too.
 [[redirects]]
-  from = "/"
-  to = "/HTML/HomePage.html"
+  from = "/html/homepage"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/html/homepage.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/html/*"
+  to = "/:splat"
   status = 301
