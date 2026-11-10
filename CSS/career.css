@@ -27,7 +27,7 @@
 
 .season-series {
   font-family: var(--fh);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -46,7 +46,7 @@
 }
 
 .season-car {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--grey);
   margin-bottom: 28px;
 }
@@ -54,7 +54,7 @@
 /* Round-by-round line for a season still in progress */
 .season-rounds {
   margin-top: 20px;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--grey);
 }
 
@@ -68,7 +68,7 @@
 .sub-col > label {
   display: block;
   font-family: var(--fh);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -87,7 +87,7 @@
 }
 .ms-lbl {
   font-family: var(--fh);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -101,7 +101,7 @@
   align-items: center;
   gap: 7px;
   font-family: var(--fh);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -145,7 +145,7 @@
 
 .mfr-tag {
   font-family: var(--fh);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -164,7 +164,7 @@
 
 .mfr-desc {
   color: var(--grey);
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.75;
   margin-top: 14px;
 }
@@ -172,7 +172,7 @@
 /* ---- CAREER INTRO TEXT ---- */
 .career-intro {
   color: var(--grey);
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.8;
   max-width: 640px;
 }
@@ -202,7 +202,7 @@
 
 .attr-label {
   font-family: var(--fh);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;

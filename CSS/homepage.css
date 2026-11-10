@@ -198,7 +198,7 @@
 }
 .about-paragraph {
   color: rgba(255,255,255,.62);
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.8;
   margin-bottom: 1rem;
 }
@@ -211,7 +211,7 @@
 }
 .about-cta {
   color: #fff;
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
@@ -254,7 +254,7 @@
 }
 .irish-text {
   color: rgba(255,255,255,.9);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -290,7 +290,7 @@
 }
 .igt-intro {
   color: rgba(255,255,255,.62);
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.8;
   margin-bottom: 32px;
 }
@@ -307,14 +307,14 @@
 .igt-facts > div:last-child { border-bottom: 1px solid var(--bdr); }
 .igt-facts dt {
   font-family: var(--fh);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--grey);
   padding-top: 2px;
 }
-.igt-facts dd { font-size: 16px; color: #fff; }
+.igt-facts dd { font-size: 18px; color: #fff; }
 .igt-lead-now {
   font-family: var(--fh);
   font-weight: 700;
@@ -331,25 +331,25 @@
   gap: 8px;
   padding: 9px 14px;
   border: 1px solid var(--bdr);
-  font-size: 15px;
+  font-size: 17px;
   color: var(--grey);
 }
 .igt-rounds .rn {
   font-family: var(--fh);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.5px;
   color: var(--blue);
 }
 .igt-rounds .rc { color: #fff; font-weight: 500; }
-.igt-rounds em { font-style: normal; font-size: 14px; }
+.igt-rounds em { font-style: normal; font-size: 15px; }
 /* Rounds already run */
 .igt-rounds .run { border-color: rgba(255,94,0,.45); }
 .igt-rounds .run .rn { color: var(--orange); }
 /* Finishing position for a round already run */
 .igt-rounds .rr {
   font-family: var(--fh);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.5px;
   padding: 2px 7px;
@@ -395,7 +395,7 @@
   padding: 26px 16px 14px;
   background: linear-gradient(to top, rgba(10,10,10,.92), transparent);
   font-family: var(--fh);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -409,7 +409,7 @@
 
 .igt-credit {
   margin-top: 28px;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--grey);
   letter-spacing: .5px;
 }
