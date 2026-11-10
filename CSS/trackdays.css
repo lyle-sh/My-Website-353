@@ -70,7 +70,7 @@
 }
 .pb-lbl {
   font-family: var(--fh);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -116,14 +116,14 @@
 .include-card:hover .ic-num { color: var(--orange); }
 .ic-title {
   font-family: var(--fh);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 900;
   text-transform: uppercase;
   color: #fff;
   margin-bottom: 12px;
   line-height: 1.1;
 }
-.ic-desc { color: var(--grey); font-size: 17px; line-height: 1.75; }
+.ic-desc { color: var(--grey); font-size: 19px; line-height: 1.75; }
 
 /* ---- SCHEDULE + CIRCUIT ---- */
 .experience-grid {
@@ -142,17 +142,17 @@
 .schedule-list li:last-child { border-bottom: none; }
 .sch-time {
   font-family: var(--fh);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 900;
   color: var(--orange);
   min-width: 52px;
   flex-shrink: 0;
 }
-.sch-event { font-size: 18px; color: rgba(255,255,255,.8); line-height: 1.4; }
+.sch-event { font-size: 20px; color: rgba(255,255,255,.8); line-height: 1.4; }
 
 .circuit-intro {
   color: var(--grey);
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.75;
   margin-top: 24px;
   margin-bottom: 32px;
@@ -177,10 +177,10 @@
   color: var(--blue);
   line-height: 1;
 }
-.cs-unit { font-size: 22px; }
+.cs-unit { font-size: 24px; }
 .cs-lbl {
   font-family: var(--fh);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -191,7 +191,7 @@
 /* ---- OPPORTUNITIES ---- */
 .opp-intro {
   color: rgba(255,255,255,.7);
-  font-size: 19px;
+  font-size: 21px;
   line-height: 1.75;
   max-width: 560px;
   margin-bottom: 48px;
@@ -227,7 +227,7 @@
   color: #fff;
   margin-bottom: 12px;
 }
-.opp-desc { color: var(--grey); font-size: 18px; line-height: 1.75; }
+.opp-desc { color: var(--grey); font-size: 20px; line-height: 1.75; }
 
 /* ---- TESTIMONIALS ---- */
 .tst-grid {
@@ -286,7 +286,7 @@
 
 .tst-body p {
   color: rgba(255,255,255,.7);
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.75;
   max-width: 65ch;
   margin-bottom: 18px;
@@ -301,7 +301,7 @@
   align-items: center;
   gap: 10px;
   font-family: var(--fh);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -333,14 +333,14 @@
 }
 .tst-name {
   font-family: var(--fh);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 900;
   color: #fff;
   line-height: 1;
 }
 .tst-role {
   font-family: var(--fh);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -353,7 +353,7 @@
 .book-section .rule { margin: 16px auto 24px; }
 .book-intro {
   color: rgba(255,255,255,.7);
-  font-size: 19px;
+  font-size: 21px;
   line-height: 1.75;
   max-width: 480px;
   margin: 0 auto 48px;
@@ -379,7 +379,7 @@
 }
 .bc-label {
   font-family: var(--fh);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -387,7 +387,7 @@
 }
 .bc-value {
   font-family: var(--fh);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 900;
   color: #fff;
 }
