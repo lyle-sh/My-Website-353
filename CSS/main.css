@@ -11,7 +11,7 @@
   --black:  #0A0A0A;
   --surf:   #111;
   --surf2:  #1C1C1C;
-  --grey:   #777;
+  --grey:   #a0a0a0;
   --bdr:    #222;
   --fh: 'Barlow Condensed', sans-serif;
   --fb: 'Barlow', sans-serif;
@@ -48,7 +48,7 @@ img { display: block; max-width: 100%; }
 /* ---- EYEBROW LABEL ---- */
 .ey {
   font-family: var(--fh);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -95,7 +95,7 @@ h2 {
   align-items: center;
   gap: 9px;
   font-family: var(--fh);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -191,7 +191,7 @@ nav::before {
 }
 .nav-links a {
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -218,7 +218,7 @@ nav::before {
 }
 .soc a {
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--grey);
   margin-left: 14px;
@@ -352,7 +352,7 @@ nav::before {
 }
 .sl {
   font-family: var(--fh);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -392,9 +392,9 @@ nav::before {
 /* Content sits above the photo */
 .ptnr-name, .ptnr-desc, .ptnr-card .btn { position: relative; z-index: 1; }
 .ptnr-name { font-family: var(--fh); font-size: clamp(28px,3vw,40px); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; color: #fff; margin-bottom: 14px; }
-.ptnr-desc { color: var(--grey); font-size: 14px; line-height: 1.75; margin-bottom: 28px; }
+.ptnr-desc { color: var(--grey); font-size: 16px; line-height: 1.75; margin-bottom: 28px; }
 .ptnr-cta  { display: flex; gap: 16px; margin-top: 48px; }
-.ptnr-intro { color: #fff !important; font-size: 15px; line-height: 1.75; max-width: 520px; margin-bottom: 64px; }
+.ptnr-intro { color: #fff !important; font-size: 17px; line-height: 1.75; max-width: 520px; margin-bottom: 64px; }
 
 /* Signature video header */
 .ptnr-header { position: relative; }
@@ -435,7 +435,7 @@ nav::before {
 .rule-or { background: var(--orange); }
 
 /* Button size modifier */
-.btn-sm { padding: 9px 20px; font-size: 11px; margin-left: 10px; }
+.btn-sm { padding: 9px 20px; font-size: 13px; margin-left: 10px; }
 
 /* Page top offset (pages without a full hero) */
 .page-top { margin-top: 65px; }
@@ -530,7 +530,7 @@ nav::before {
   }
   .nav-links.open { display: flex; }
   .nav-links li   { border-bottom: 1px solid var(--bdr); }
-  .nav-links a    { display: block; padding: 14px 24px; font-size: 13px; }
+  .nav-links a    { display: block; padding: 14px 24px; font-size: 15px; }
 
   /* Stats: 2×2 grid */
   .si { grid-template-columns: repeat(2, 1fr); }

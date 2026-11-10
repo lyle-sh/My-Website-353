@@ -27,7 +27,7 @@
 
 .gnav-btn {
   font-family: var(--fh);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -63,7 +63,7 @@
 
 .season-tag {
   font-family: var(--fh);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
