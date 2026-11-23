@@ -32,3 +32,18 @@
     });
   }, { threshold: .25 }).observe(sig);
 })();
+
+/* Season highlight video: swap the poster for the YouTube player on click */
+document.querySelectorAll('.igt-video-frame[data-yt]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.yt + '?autoplay=1&rel=0';
+    f.title = 'Italian GT 2026 season highlights';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    var box = document.createElement('div');   // an iframe can't live inside a <button>
+    box.className = 'igt-video-frame';
+    box.appendChild(f);
+    btn.replaceWith(box);
+  }, { once: true });
+});

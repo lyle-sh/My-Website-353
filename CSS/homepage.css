@@ -366,6 +366,51 @@
 .igt-card { border: 1px solid var(--bdr); overflow: hidden; }
 .igt-card img { width: 100%; height: auto; display: block; }
 
+/* Season highlight video: poster + play button, YouTube player loads on click */
+.igt-video { margin: 0 0 56px; }
+.igt-video-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: 0;
+  background: #000;
+  overflow: hidden;
+  cursor: pointer;
+}
+.igt-video-frame img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .8s cubic-bezier(.16,1,.3,1), filter .5s ease;
+  filter: brightness(.85);
+}
+.igt-video-frame:hover img { transform: scale(1.03); filter: brightness(1); }
+.igt-play {
+  position: absolute; left: 50%; top: 50%;
+  width: 84px; height: 84px; margin: -42px 0 0 -42px;
+  border-radius: 50%;
+  background: var(--orange);
+  transition: transform .3s ease;
+}
+.igt-play::after {
+  content: ""; position: absolute; left: 34px; top: 26px;
+  border-style: solid; border-width: 16px 0 16px 26px;
+  border-color: transparent transparent transparent #fff;
+}
+.igt-video-frame:hover .igt-play { transform: scale(1.08); }
+.igt-video-frame:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+.igt-video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.igt-video figcaption {
+  margin-top: 14px;
+  font-family: var(--fh);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.igt-video figcaption span { color: var(--grey); font-weight: 400; letter-spacing: 1px; }
+
 /* Photo grid */
 .igt-grid {
   display: grid;
